@@ -1,5 +1,7 @@
 package models;
 
+import interfaces.Payable;
+
 public abstract class Person implements Payable, Comparable<Person>{
     static int idCounter = 1;
     int id;
