@@ -62,4 +62,11 @@ public class Employee extends Person{
     public double getPaymentAmount() {
         return salary;
     }
+
+    @Override
+    public int compareTo(Person person) {
+        if(salary == person.getPaymentAmount()) return 0;
+        else if(salary > person.getPaymentAmount()) return 1;
+        else return -1;
+    }
 }

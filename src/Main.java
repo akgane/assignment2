@@ -3,12 +3,14 @@ import models.Person;
 import models.Student;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.function.Predicate;
 
 public class Main {
     public static void main(String[] args) {
-        Person e1 = new Employee("Jack", "Rojers", "Developer", 54200);
-        Person e2 = new Employee("Mark", "Markov", "Manager", 42000);
+        Person e1 = new Employee("Jack", "Rojers", "Developer", 5420);
+        Person e2 = new Employee("Mark", "Markov", "Manager", 4200);
         Person e3 = new Employee("Walter", "White", "Chemist", 1150000);
         Person e4 = new Employee("Jack", "Sparrow", "Pirate", 163450);
         Person e5 = new Employee("Neil", "Armstrong", "Astronaut", 360500);
@@ -31,13 +33,14 @@ public class Main {
         persons.add(s4);
         persons.add(s5);
 
+        Collections.sort(persons);
         printData(persons);
     }
 
     static void printData(Iterable<Person> persons){
+
         for (Person person : persons){
-            System.out.print(person.toString());
-            System.out.println(" earns " + person.getPaymentAmount() + " tenge.");
+            System.out.println(person.printData());
         }
     }
 }

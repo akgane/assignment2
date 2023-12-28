@@ -1,6 +1,6 @@
 package models;
 
-public abstract class Person implements Payable{
+public abstract class Person implements Payable, Comparable<Person>{
     static int idCounter = 1;
     int id;
     String name, surname;
@@ -36,4 +36,7 @@ public abstract class Person implements Payable{
         return id + ". " + name + " " + surname;
     }
     public abstract String getPosition();
+    public String printData(){
+        return toString() + " earns " + getPaymentAmount() + " tenge.";
+    }
 }

@@ -59,4 +59,10 @@ public class Student extends Person {
     public double getPaymentAmount() {
         return gpa > 2.67 ? 36660.0 : 0;
     }
+
+    @Override public int compareTo(Person person){
+        if(getPaymentAmount() == person.getPaymentAmount()) return 0;
+        else if (getPaymentAmount() > person.getPaymentAmount()) return 1;
+        else return -1;
+    }
 }
